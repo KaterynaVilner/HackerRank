@@ -1,0 +1,24 @@
+//Given a string, reduce it in such a way that all of its substrings are distinct. You may delete any characters at any index
+
+class Result {
+
+    public static int getMinDeletions(String s) {
+    char[] detDel = s.toCharArray();
+    String[] arr = new String[detDel.length];
+    for(int i=0; i<detDel.length; i++){
+       arr[i]=Character.toString(detDel[i]); 
+    }   
+    int count = 0;
+    for(int i=0;i<arr.length-1;i++){
+        for(int j=i+1; j<arr.length;j++){
+            if(arr[i].compareToIgnoreCase(arr[j])==0){
+                count+=1;
+                break;
+            }
+        }
+    }
+    return count;
+
+    }
+
+}
