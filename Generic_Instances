@@ -1,0 +1,55 @@
+//Create  Generic classes that implement the generic interface DataType<T>
+
+ class StringDataType<T> implements DataType<T>{
+ public void addition(T a, T b){
+     System.out.println("Adding two strings");
+     System.out.println("The result is: "+a.toString().concat(b.toString()));
+ }
+ public void subtraction(T a, T b){
+     System.out.println("Can't perform this operation on strings");
+ }
+ public void multiplication(T a, T b){
+     System.out.println("Can't perform this operation on strings");
+ }
+ public void division(T a, T b){
+     System.out.println("Can't perform this operation on strings");
+ } 
+ public void performAll(T a, T b){
+     addition( a,  b);
+     subtraction(a,  b);
+     multiplication( a,  b);
+     division( a,  b);
+ }    
+}
+class NumericDataType<T extends Number> implements DataType<T>{
+  public void addition(T a, T b){
+      System.out.println("Adding 2 generic instances");
+      double sum = a.doubleValue()+b.doubleValue();
+      System.out.printf("The result is: %.2f\n", sum);
+      
+  }
+ public void subtraction(T a, T b){
+     System.out.println("Subtracting two generic instances");
+     double sum = a.doubleValue()-b.doubleValue();
+      System.out.printf("The result is: %.2f\n", sum);
+     
+ }
+ public void multiplication(T a, T b){
+     System.out.println("Multiplying two generic instances");
+     double sum = a.doubleValue()*b.doubleValue();
+      System.out.printf("The result is: %.2f\n", sum);
+     
+ }
+ public void division(T a, T b){
+     System.out.println("Dividing two generic instances");
+     double sum = a.doubleValue()/b.doubleValue();
+      System.out.printf("The result is: %.2f\n", sum);
+     
+ } 
+ public void performAll(T a,T b){
+     addition( a,  b);
+     subtraction(a,  b);
+     multiplication( a,  b);
+     division( a,  b); 
+ }     
+}
