@@ -1,0 +1,30 @@
+//Convert a static array to a dynamic list. Create classes that implement the interface MyList and InvalidStringException class that inherits from inbuild Exception class
+
+class InvalidStringException extends Exception{
+ InvalidStringException(String message){    
+      super(message);     
+ }   
+}
+
+class ArrayToList implements MyList{
+ ArrayList<String> arrayToList;
+  ArrayToList(){
+    arrayToList = new ArrayList<>();  
+ }
+ public void convert(String[] a){
+     for(int i=0; i<a.length; i++){
+       arrayToList.add(a[i]);
+       System.out.println("I have added the string: "+a[i]+" at the index: "+i);  
+     }
+ }
+ public void replace(int idx){
+     
+     System.out.println("I have replaced the string: "+arrayToList.get(idx)+" with a null string");
+     arrayToList.set(idx, "");
+ }
+ public ArrayList<String> compact(){
+     arrayToList.removeAll(Collections.singleton(""));;
+     
+     return arrayToList;
+ }   
+}
