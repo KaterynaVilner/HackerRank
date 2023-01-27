@@ -1,0 +1,57 @@
+//Given a series of random numbers from 1 to 5 . Calculate the product of their serial multiplication
+
+class SerialMultiplier {
+int first;
+int second;
+int third;
+int fourth;
+int fifth;
+int result;
+
+SerialMultiplier(int first){
+    this.first = first;
+    int[] n={this.first};
+    this.result=result(n);
+}
+SerialMultiplier(int first, int second){
+    this.first = first;
+    this.second=second;
+    int[] n ={this.first, this.second};
+    this.result=result(n);
+}
+SerialMultiplier(int first, int second, int third){
+    this.first = first;
+    this.second=second;
+    this.third=third;
+    int[] n ={this.first, this.second, this.third};
+    this.result=result(n);
+}
+SerialMultiplier(int first, int second, int third, int fourth){
+    this.first = first;
+    this.second=second;
+    this.third=third;
+    this.fourth = fourth;
+    int[] n ={this.first, this.second, this.third, this.fourth};
+    this.result=result(n);
+}
+SerialMultiplier(int first, int second, int third, int fourth, int fifth){
+    this.first = first;
+    this.second=second;
+    this.third=third;
+    this.fourth = fourth;
+    this.fifth = fifth;
+    int[] n ={this.first, this.second, this.third, this.fourth, this.fifth};
+    this.result=result(n);
+}
+int result(int[] n){ 
+    int sum =1;
+ for(int i =0; i<n.length;i++){    
+     sum=sum*n[i];     
+ }
+  return sum;  
+}
+@Override
+public String toString(){
+  return ""+ this.result; 
+ }
+}
