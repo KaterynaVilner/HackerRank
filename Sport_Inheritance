@@ -1,0 +1,87 @@
+Create two classes: Cricket and Football that implement the interface Sport
+
+class Cricket implements Sport{
+    int[] playerIDs;
+    ArrayList<Integer> retired = new ArrayList<>();
+    Cricket()
+    {
+        playerIDs = new int[11];
+        for(int i:playerIDs){
+           i=1;
+        }
+        System.out.println("A new cricket team has been formed");
+    } 
+    public void calculateAvgAge(int[] age){
+        double sum =0;
+        for(int i=0;i<age.length;i++){
+            sum+=(double)age[i];
+        }
+        double average =sum/age.length;
+        System.out.printf("The average age of the team is %.2f", average);
+        System.out.println();
+    }
+ public void retirePlayer(int id){
+     
+     if(retired.contains(id)){
+         System.out.println("Player has already retired");  
+     }
+     else
+        {retired.add(id);
+        int retid =id;
+        id=-1;
+        System.out.println("Player with id: " + retid + " has retired"); 
+         
+        }
+  
+ }    
+    
+}
+ class Football implements Sport{
+  ArrayList<Integer> retired = new ArrayList<>();   
+  int[] playerIDs;
+  
+  Football()
+  {
+    playerIDs = new int[11];
+    for(int i : playerIDs){
+        i=1;
+    }
+    System.out.println("A new football team has been formed");
+  }
+   public void calculateAvgAge(int[] age){
+        double sum =0;
+        for(int i=0;i<age.length;i++){
+            sum+=(double)age[i];
+        }
+        double average =sum/age.length;
+        System.out.printf("The average age of the team is %.2f", average);
+        System.out.println();
+    }
+ public void retirePlayer(int id){
+     
+     if(retired.contains(id)){
+         System.out.println("Player has already retired");  
+     }
+     else
+        {retired.add(id);
+        int retid =id;
+        id=-1;
+        System.out.println("Player with id: " + retid + " has retired"); 
+         
+        }
+  
+ }    
+ 
+ void playerTransfer(int fee, int id){
+     if(retired.contains(id)){
+         System.out.println("Player has already retired");
+     }
+     else
+     {
+        int trid =id;
+        id=1;
+         System.out.println("Player with id: " + trid + " has been transferred with a fee of " + fee);
+     }
+    }  
+  
+}
