@@ -1,0 +1,45 @@
+// Create a Robot class that can move around on a 2D plane. It needs to be able to change its position, report its position and report its last move.
+
+class Robot{
+     int currentX=0;
+     int currentY=5;
+     int previousX;
+     int previousY;
+     boolean lastx = false;
+     
+     Robot(int x, int y){
+         previousX=currentX;
+         previousY=currentY;
+         this.currentX=x;
+         this.currentY=y;
+     }
+     Robot(){
+         
+     }
+     
+     void moveX(int dx){
+         previousX=currentX;
+         previousY=currentY;
+         currentX+=dx;
+         lastx = true;
+     }
+     void moveY(int dy){
+         previousY=currentY;
+         previousX=currentX;
+         currentY+=dy;
+         lastx = false;         
+     }
+     void printCurrentCoordinates(){
+         System.out.println(currentX+" "+currentY);
+     }
+     void printLastCoordinates(){
+        System.out.println(previousX+" "+previousY); 
+     }
+     void printLastMove(){
+         if(lastx==true){
+          System.out.println("x "+(currentX-previousX));;   
+         }else{
+           System.out.println("y "+(currentY-previousY));  
+         }
+     }
+ }
