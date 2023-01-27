@@ -1,0 +1,21 @@
+//Given an integer, if the number is prime, return 1. Otherwise return its smallest divisor greater than 1.
+
+class Result {
+
+    public static int isPrime(long n) {
+    int smallDiv=1;
+    if (n % 2 == 0)
+        smallDiv= 2;
+ 
+    for (int i = 3; i * i <= n; i += 2) {
+        if (n % i == 0)
+            {smallDiv=i;
+            break;}
+    }
+    if (n==2 || smallDiv==1){
+        return 1;
+    }else{return smallDiv;}
+
+    }
+
+}
