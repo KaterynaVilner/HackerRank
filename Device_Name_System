@@ -1,0 +1,25 @@
+/*
+* Create unique device names to be used in a residential IoT(Internet of Things) system. If a device name already exist , an integer number is added at the end of the name to make it unique.
+* The number added starts with one and is incremented by one for each new request of an existing device name
+*/
+
+class Result {
+    private static final Integer ONE = 1;
+
+
+    public static List<String> deviceNamesSystem(List<String> devicenames) {
+    Map<String, Integer> unique = new  LinkedHashMap<>();
+    for(int i=0; i<devicenames.size();i++){
+        if(unique.containsKey(devicenames.get(i))){
+           unique.put(devicenames.get(i)+unique.get(devicenames.get(i)).intValue(),1); 
+            }
+        Integer freq = (Integer) unique.get(devicenames.get(i));
+        unique.put(devicenames.get(i),freq==null ? ONE : (freq.intValue() + 1));
+        } 
+    
+    Set<String> keySet = unique.keySet();      
+    ArrayList<String> listOfKeys= new ArrayList<String>(keySet);
+            
+    return listOfKeys;
+    }
+}
